@@ -1,0 +1,9 @@
+<NUnitProject>
+  <Settings processModel="Default" domainUsage="Default" />
+  <Config name="Debug">
+    <assembly path="src\Refactoring\GildedRose\bin\Debug\GildedRose.dll"/>
+  </Config>
+  <Config name="Release">
+    <assembly path="src\Refactoring\GildedRose\bin\Release\GildedRose.dll"/>
+  </Config>
+</NUnitProject>
