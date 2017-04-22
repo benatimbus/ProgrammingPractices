@@ -143,6 +143,16 @@ namespace GildedRose
             conjured.SellIn.ShouldBe(10);
             conjured.Quality.ShouldBe(8);
         }
+
+
+        [Test]
+        public void When_UpdateQuality_Is_Called_Conjured_Items_Quality_Degrade_Twice_As_Fast_If_Quality_Is_Zero()
+        {
+            conjured.Quality = 0;
+            rose.UpdateQuality();
+            conjured.SellIn.ShouldBe(10);
+            conjured.Quality.ShouldBe(0);
+        }
     }
 }
 
