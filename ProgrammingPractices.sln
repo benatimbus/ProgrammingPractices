@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Refactoring", "Refactoring", "{09FC2A67-4D74-43C9-A44B-779CEA25CB10}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GildedRose", "GildedRose", "{E98FA83D-FBD3-4798-A1B1-541080BAF674}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedRose", "src\Refactoring\GildedRose\GildedRose.csproj", "{95EE3002-8DF7-4C57-8470-EBA3A6EB5425}"
 EndProject
 Global
@@ -24,7 +22,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{E98FA83D-FBD3-4798-A1B1-541080BAF674} = {09FC2A67-4D74-43C9-A44B-779CEA25CB10}
-		{95EE3002-8DF7-4C57-8470-EBA3A6EB5425} = {E98FA83D-FBD3-4798-A1B1-541080BAF674}
+		{95EE3002-8DF7-4C57-8470-EBA3A6EB5425} = {09FC2A67-4D74-43C9-A44B-779CEA25CB10}
 	EndGlobalSection
 EndGlobal
