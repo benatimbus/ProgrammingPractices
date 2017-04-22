@@ -21,10 +21,10 @@ namespace GildedRose
             simple = new Item { Name = "Simple", SellIn = 10, Quality = 5 };
             agedBrie = new Item { Name = "Aged Brie", SellIn = 6, Quality = 5 };
             sulfuras = new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 50, Quality = 80 };
-            tickets = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 11, Quality = 10 };
+            tickets = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 12, Quality = 10 };
             conjured = new Item { Name = "Conjured", SellIn = 11, Quality = 10 };
 
-            rose = new GildedRose(new List<Item> { simple, agedBrie, sulfuras, tickets });
+            rose = new GildedRose(new List<Item> { simple, agedBrie, sulfuras, tickets, conjured });
         }
 
 		[Test]
@@ -66,6 +66,16 @@ namespace GildedRose
         }
 
         [Test]
+        public void When_UpdateQuality_Is_Called_And_The_Item_Is_Aged_Brie_The_Quality_Increases_If_SellIn_Is_Less_Than_Zero()
+        {
+            agedBrie.SellIn = -2;
+            rose.UpdateQuality();
+
+            agedBrie.SellIn.ShouldBeLessThan(0);
+            agedBrie.Quality.ShouldBe(6);
+        }
+
+        [Test]
         public void When_Update_Quality_Is_Called_It_Does_Not_Increase_The_Quality_Above_50()
         {
             agedBrie.Quality = 49;
@@ -91,7 +101,7 @@ namespace GildedRose
         public void When_UpdateQuality_Is_Called_BackStageTicket_Quality_Increases_By_1_If_SellIn_Larger_Than_10()
         {
             rose.UpdateQuality();
-            tickets.SellIn.ShouldBe(10);
+            tickets.SellIn.ShouldBe(11);
             tickets.Quality.ShouldBe(11);
         }
 
@@ -126,7 +136,7 @@ namespace GildedRose
             tickets.Quality.ShouldBe(0);
         }
 
-        [Test, Explicit]
+        [Test]
         public void When_UpdateQuality_Is_Called_Conjured_Items_Quality_Degrade_Twice_As_Fast()
         {
             rose.UpdateQuality();
